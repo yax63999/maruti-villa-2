@@ -3,13 +3,15 @@ const path = require("path");
 
 const app = express();
 
+// Static files (CSS, Images)
+app.use(express.static(path.join(__dirname, "public")));
+
 // EJS for HTML
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
 
-// Static files (CSS, Images)
-app.use(express.static(path.join(__dirname, "public")));
+
 
 // Home page route
 app.get("/", (req, res) => {
